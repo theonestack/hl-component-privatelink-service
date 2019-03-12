@@ -1,0 +1,3 @@
+#Override this list to provide your own list of allow principals
+allowed_principals:
+  - Fn::Sub: arn:aws:iam::${AWS::AccountId}:root
