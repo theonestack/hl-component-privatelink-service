@@ -1,0 +1,7 @@
+test_metadata:
+  type: config
+  name: private dns verification
+  description: Create R53 record for private dns verification
+
+dns_format: example.com
+
