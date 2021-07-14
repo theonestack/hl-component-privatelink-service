@@ -128,7 +128,7 @@ CloudFormation do
                     response = client.describe_vpc_endpoint_service_configurations(ServiceIds=[serviceId])
                     responseData['DnsName'] = event['ResourceProperties']['DnsName']
                     responseData['DomainVerificationName'] = response['ServiceConfigurations'][0]['PrivateDnsNameConfiguration']['Name']
-                    responseData['DomainVerificationValue'] = """ + response['ServiceConfigurations'][0]['PrivateDnsNameConfiguration']['Value'] + """
+                    responseData['DomainVerificationValue'] = '"' + response['ServiceConfigurations'][0]['PrivateDnsNameConfiguration']['Value'] + '"'
                 elif event['RequestType'] == 'Delete':
                     response = client.describe_vpc_endpoint_service_configurations(ServiceIds=[serviceId])
                     if response['ServiceConfigurations'][0]['PrivateDnsName'] == dnsName:
