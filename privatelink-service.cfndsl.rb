@@ -141,7 +141,7 @@ CloudFormation do
       CODE
     })
     Handler "index.lambda_handler"
-    Runtime "python3.8"
+    Runtime "python3.11"
     Role FnGetAtt(:ccrPrivateDnsRole, :Arn)
     Timeout 60
   }
